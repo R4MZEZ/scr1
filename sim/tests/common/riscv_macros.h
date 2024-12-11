@@ -103,7 +103,8 @@
 
 #define RVTEST_CODE_BEGIN                                               \
         .section .text.init;                                            \
-        .org 0xC0, 0x00;                                                \
+        MSG_TRAP:                                                       \
+        .string "BP\0";                                                 \
         .balign  64;                                                    \
         .weak stvec_handler;                                            \
         .weak mtvec_handler;                                            \
@@ -130,9 +131,22 @@ other_exception:                                                        \
         /* some unhandlable exception occurred */                       \
         li   a0, 0x1;                                                   \
 _report:                                                                \
+        andi a5, a5, 0x3;                                               \
+        li a5, CAUSE_BREAKPOINT;                                        \
+        beq a4, a5, skip_handle_breakpoint;                             \
+        lui a6, 0xf0000;                                                \
+        la a7, MSG_TRAP;                                                \
+next_iter:                                                              \
+        lb a5, 0(a7);                                                   \
+        beq a5, x0, skip_handle_breakpoint;                             \
+        sw a5, 0(a6);   /* write to a6 char for print */                \
+        addi a7, a7, 1;                                                 \
+        jal x0,next_iter;                                               \
+skip_handle_breakpoint:                                                 \
         j sc_exit;                                                      \
         .balign  64;                                                    \
         .globl _start;                                                  \
+        .section .text.start;                                           \
 _start:                                                                 \
         RISCV_MULTICORE_DISABLE;                                        \
         /*INIT_SPTBR;*/                                                 \
