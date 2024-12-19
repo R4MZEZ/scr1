@@ -1,0 +1,33 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Thu Dec 19 15:52:20 2024
+[*]
+[dumpfile] "/home/roman/git/scr1/build/verilator_wf_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_1/simx.vcd"
+[dumpfile_mtime] "Thu Dec 19 15:42:01 2024"
+[dumpfile_size] 1224218
+[savefile] "/home/roman/git/scr1/build/verilator_wf_AHB_MAX_imc_IPIC_1_TCM_1_VIRQ_1_TRACE_1/result.gtkw"
+[timestart] 286
+[size] 1908 1007
+[pos] 34687 32767
+*-6.000000 442 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] scr1_top_tb_ahb.
+[treeopen] scr1_top_tb_ahb.i_top.
+[treeopen] scr1_top_tb_ahb.i_top.i_core_top.
+[treeopen] scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.
+[sst_width] 384
+[signals_width] 278
+[sst_expanded] 1
+[sst_vpaned_height] 424
+@28
+scr1_top_tb_ahb.i_top.i_core_top.clk
+@22
+scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.curr_pc[31:0]
+scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.i_pipe_ifu.imem_rdata_lo[15:0]
+scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.i_pipe_ifu.imem_addr_next[31:2]
+@28
+scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.i_pipe_ifu.imem_resp_ok
+scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.i_pipe_ifu.imem_resp_er
+@23
+scr1_top_tb_ahb.i_top.i_core_top.i_pipe_top.pipe2imem_addr_o[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
